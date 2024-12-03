@@ -1,18 +1,22 @@
 import os.path
 import json
 
+current_file_dir = os.path.dirname(os.path.abspath(__file__))
+json_file_path = os.path.join(current_file_dir, "amountNumber.json")
+
+
 def checkFileExist(path_vault_references, title):
     path = path_vault_references + title+".md"
     if not os.path.exists(path):
         f = open(path, "w")
         f.close()
-        with open ("amountNumber.json", "r")as jsonF:
+        with open (json_file_path, "r")as jsonF:
             data = json.load(jsonF)
         newData = {
             "title": f"{title}",
             "amountRef": 1
         }
-        with open("amountNumber.json", "w") as jsonF:
+        with open(json_file_path, "w") as jsonF:
             data["books"].append(newData)
             json.dump(data, jsonF)
 
@@ -33,7 +37,7 @@ def writeToFile(path_vault_references, list):
     path = path_vault_references + title+".md"
     f = open(path, "a")
 
-    with open("amountNumber.json", "r") as jsonF:
+    with open(json_file_path, "r") as jsonF:
         data = json.load(jsonF)['books']
         for i in range(len(data)):
             if data[i]['title'] == title:
@@ -49,7 +53,7 @@ def writeToFile(path_vault_references, list):
             f.write(f"- {highlight.timestamp}\n")
             f.write(f"- {highlight.title} - {highlight.author} {highlight.page}\n\n")
             data[index]['amountRef'] += 1
-            with open("amountNumber.json", "w") as jsonF:
+            with open(json_file_path, "w") as jsonF:
                 json.dump({'books': data}, jsonF, indent=4)
             counter= counter +1
     print(f"{counter} highlights were send to {path}")

@@ -1,7 +1,6 @@
 from highlightObj import Highlight
 
 def createHighlightsRaw(path_to_highlights):
-    print(path_to_highlights)
     with open(path_to_highlights, "r") as file:
         content = file.read().split("-----------------------------------")
     highlightsRaw = []
