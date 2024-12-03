@@ -1,0 +1,28 @@
+{
+    "books": [
+        {
+            "title": "Digital Minimalism",
+            "amountRef": 19
+        },
+        {
+            "title": "What the Most Successful People Do Before Breakfast",
+            "amountRef": 15
+        },
+        {
+            "title": "Think Again - Die Kraft des flexiblen Denkens",
+            "amountRef": 11
+        },
+        {
+            "title": "Digital Minimalism",
+            "amountRef": 19
+        },
+        {
+            "title": "What the Most Successful People Do Before Breakfast",
+            "amountRef": 15
+        },
+        {
+            "title": "Think Again - Die Kraft des flexiblen Denkens",
+            "amountRef": 11
+        }
+    ]
+}
