@@ -48,6 +48,7 @@ def writeToFile(path_vault_references, list):
         num = data[index]['amountRef']
         if not checkHighlightExist(path, highlight):
             #file structure or its design in obsidian
+            f.write(f"---\nauthor: [[{highlight.author}]]\ndiscussed: false\n---")
             f.write(f"#### reference no.{num}\n")
             f.write(f"- {highlight.message}\n")
             f.write(f"- {highlight.timestamp}\n")
