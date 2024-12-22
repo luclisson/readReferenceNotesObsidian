@@ -44,11 +44,11 @@ def writeToFile(path_vault_references, list):
                 index = i
     # read value of json amountRef to be able to numberize the highlights
     # solution with json due to future added highlights and be able to access the amount of highlights with minimal error handling
+    f.write(f"---\nauthor: [[{list[0].author}]]\ndiscussed: false\n---\n")
     for highlight in list:
         num = data[index]['amountRef']
         if not checkHighlightExist(path, highlight):
             #file structure or its design in obsidian
-            f.write(f"---\nauthor: [[{highlight.author}]]\ndiscussed: false\n---")
             f.write(f"#### reference no.{num}\n")
             f.write(f"- {highlight.message}\n")
             f.write(f"- {highlight.timestamp}\n")
